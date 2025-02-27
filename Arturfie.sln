@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arturfie.Infrastructure", "src\Infrastructure\Arturfie.Infrastructure.csproj", "{FF0BBAA2-CAF5-44DB-8A04-FFCD2A384F5E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.FunctionalTests", "Application.FunctionalTests", "{CFB35AA8-FDB8-705D-2EAE-6618A336344F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arturfie.Application.FunctionalTests", "tests\Application.FunctionalTests\Arturfie.Application.FunctionalTests.csproj", "{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +69,18 @@ Global
 		{FF0BBAA2-CAF5-44DB-8A04-FFCD2A384F5E}.Release|x64.Build.0 = Release|Any CPU
 		{FF0BBAA2-CAF5-44DB-8A04-FFCD2A384F5E}.Release|x86.ActiveCfg = Release|Any CPU
 		{FF0BBAA2-CAF5-44DB-8A04-FFCD2A384F5E}.Release|x86.Build.0 = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|x64.ActiveCfg = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|x64.Build.0 = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +92,7 @@ Global
 		{CD96B167-A56A-4CBE-8324-77F809F95B40} = {22BAF98C-8415-17C4-B26A-D537657BC863}
 		{9048EB7F-3875-A59E-E36B-5BD4C6F2A282} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{FF0BBAA2-CAF5-44DB-8A04-FFCD2A384F5E} = {9048EB7F-3875-A59E-E36B-5BD4C6F2A282}
+		{CFB35AA8-FDB8-705D-2EAE-6618A336344F} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643} = {CFB35AA8-FDB8-705D-2EAE-6618A336344F}
 	EndGlobalSection
 EndGlobal

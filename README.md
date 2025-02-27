@@ -80,6 +80,14 @@ public static class DependencyInjection
 ### Registering Application and Infrastructure in WebApi
 
 ```csharp
-        builder.Services.AddApplication();
-        builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration);
+```
+
+## MSTest
+
+```powershell
+dotnet new mstest --output tests/Application.FunctionalTests --name Arturfie.Application.FunctionalTests
+dotnet sln add tests/Application.FunctionalTests
+dotnet add tests/Application.FunctionalTests reference src/Infrastructure
 ```
