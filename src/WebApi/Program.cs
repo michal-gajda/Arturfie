@@ -1,5 +1,8 @@
 namespace Arturfie.WebApi;
 
+using Arturfie.Application;
+using Arturfie.Infrastructure;
+
 internal static class Program
 {
     const int EXIT_SUCCESS = 0;
@@ -8,6 +11,9 @@ internal static class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddApplication();
+        builder.Services.AddInfrastructure(builder.Configuration);
+        
         builder.Services.AddControllers();
         builder.Services.AddOpenApi();
 
