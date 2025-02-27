@@ -1,6 +1,6 @@
-@Arturfie.WebApi_HostAddress = http://localhost:5126
+@WebApi_HostAddress = http://localhost:5000
 
-GET {{Arturfie.WebApi_HostAddress}}/weatherforecast/
+GET {{WebApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
