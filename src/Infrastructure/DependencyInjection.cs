@@ -1,6 +1,7 @@
 ﻿namespace Arturfie.Infrastructure;
 
 using System.Reflection;
+using Arturfie.Infrastructure.GitHub;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,8 @@ public static class DependencyInjection
     {
         var assembly = Assembly.GetExecutingAssembly();
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
+
+        services.AddGitHub(configuration);
 
         return services;
     }

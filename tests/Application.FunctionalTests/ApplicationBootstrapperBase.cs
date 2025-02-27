@@ -3,6 +3,7 @@
 using Arturfie.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 public abstract class ApplicationBootstrapperBase
 {
@@ -16,7 +17,7 @@ public abstract class ApplicationBootstrapperBase
 
         var services = new ServiceCollection();
 
-        services.AddLogging();
+        services.AddLogging(cfg => cfg.AddConsole());
 
         services.AddApplication();
         services.AddInfrastructure(configuration);

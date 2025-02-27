@@ -13,6 +13,7 @@ dotnet new sln --name Arturfie
 ```powershell
 dotnet new webapi --no-https --use-controllers --use-program-main --output src/WebApi --name Arturfie.WebApi
 dotnet sln add src/WebApi
+dotnet user-secrets init --project src/WebApi
 ```
 
 ## Application
@@ -146,4 +147,18 @@ public abstract class ApplicationBootstrapperBase
 
 ```powershell
 dotnet user-secrets init
+```
+
+## Add Application UnitTests
+
+```powershell
+dotnet new mstest --output tests/Application.UnitTests --name Arturfie.Application.UnitTests
+dotnet sln add tests/Application.UnitTests
+dotnet add tests/Application.UnitTests reference src/Application
+dotnet add tests/Application.UnitTests package Microsoft.Extensions.Logging
+```
+
+```powershell
+dotnet user-secrets set "Characters" "" --project src/WebApi
+dotnet user-secrets set "Characters" "" --project tests/Application.FunctionalTests
 ```
