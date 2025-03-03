@@ -99,6 +99,7 @@ dotnet add tests/Application.FunctionalTests reference src/Infrastructure
 ### Create FunctionalTests Bootstrapper
 
 ```powershell
+dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.Configuration.EnvironmentVariables
 dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.Configuration.Json
 dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.Configuration.UserSecrets
 dotnet add tests/Application.FunctionalTests package Microsoft.Extensions.DependencyInjection
@@ -125,6 +126,7 @@ public abstract class ApplicationBootstrapperBase
     {
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
+            .AddEnvironmentVariables()
             .AddUserSecrets<ApplicationBootstrapperBase>()
             .Build();
 
