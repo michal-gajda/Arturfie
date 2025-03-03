@@ -41,6 +41,7 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
         }
 
         this.LogCharacter(rival.Name);
+
         return rival.Name;
     }
 
