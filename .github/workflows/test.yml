@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      CHARACTERS: ${{vars.CHARACTERS}}
+      CHARACTERS: ${{ vars.CHARACTERS }}
 
     steps:
       - name: Checkout repo
