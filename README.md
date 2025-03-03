@@ -177,3 +177,13 @@ dotnet add tests/WebApi.IntegrationTests reference src/WebApi
 dotnet add tests/WebApi.IntegrationTests package FluentAssertions
 dotnet add tests/WebApi.IntegrationTests package Microsoft.AspNetCore.Mvc.Testing
 ```
+
+## OpenTelemetry
+
+```powershell
+dotnet add src/WebApi package OpenTelemetry.Exporter.OpenTelemetryProtocol
+dotnet add src/WebApi package OpenTelemetry.Extensions.Hosting
+dotnet add src/WebApi package OpenTelemetry.Instrumentation.AspNetCore
+dotnet add src/WebApi package OpenTelemetry.Instrumentation.Http
+dotnet add src/WebApi package OpenTelemetry.Instrumentation.Runtime
+```

@@ -35,12 +35,15 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
 
         if (character.Score > rival.Score)
         {
+            this.LogCharacter(character.Name);
+
             return character.Name;
         }
 
+        this.LogCharacter(rival.Name);
         return rival.Name;
     }
 
-    [LoggerMessage(LogLevel.Debug, Message = "{character}")]
-    private partial void LogCharacter(Character character);
+    [LoggerMessage(LogLevel.Debug, Message = "{characterName}")]
+    private partial void LogCharacter(string characterName);
 }
