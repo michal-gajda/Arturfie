@@ -33,11 +33,6 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
             throw new WrongOpponentException();
         }
 
-        // if (character.Weakness == rival.Name)
-        // {
-        //     return rival.Name;
-        // }
-
         if (character.Score > rival.Score)
         {
             return character.Name;

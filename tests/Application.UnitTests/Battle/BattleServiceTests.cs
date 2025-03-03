@@ -102,24 +102,6 @@ public sealed class BattleServiceTests
             ;
     }
 
-    // [TestMethod]
-    // public async Task FightAsync_GivenHeroAndHisWeakness_Should_Return_Weakness()
-    // {
-    //     // Arrange
-    //     var characterName = "Batman";
-    //     var rivalName = "Joker";
-
-    //     // Act
-    //     var sut = await service.FightAsync(characterName, rivalName, CancellationToken.None);
-
-    //     // Assert
-    //     sut.Should()
-    //         .NotBeNull()
-    //         .And
-    //         .Be(rivalName)
-    //         ;
-    // }
-
     [TestMethod]
     public async Task FightAsync_GivenHeroAndVillain_Should_Return_Hero_Character_With_Higher_Score()
     {
