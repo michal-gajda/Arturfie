@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Characters: ${{ vars.CHARACTERS }}
+      CHARACTERS: ${{ vars.CHARACTERS }}
 
     steps:
       - name: Checkout repo
@@ -25,6 +25,10 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "9.0.x"
+
+      - name: Print Repository Variables
+        run: |
+          echo "CHARACTERS: $CHARACTERS"
 
       - name: Restore dependencies
         run: dotnet restore
