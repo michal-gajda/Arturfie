@@ -14,6 +14,11 @@ internal static class Program
         builder.Services.AddApplication();
         builder.Services.AddInfrastructure(builder.Configuration);
 
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddProblemDetails();
+
+        builder.Services.AddExceptionHandler<BattleExceptionsHandler>();
+
         builder.Services.AddControllers();
         builder.Services.AddOpenApi();
 
@@ -25,6 +30,8 @@ internal static class Program
         }
 
         app.UseAuthorization();
+
+        app.UseExceptionHandler();
 
         app.MapControllers();
 

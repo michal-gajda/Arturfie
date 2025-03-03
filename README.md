@@ -1,5 +1,8 @@
 # Arturfie
 
+- [Superheroes Tech Test](https://gist.github.com/arturfie/417061f4ca9627abc176fd905b24cf2b)
+- [Characters](https://gist.githubusercontent.com/arturfie/1594a132dbf76a977503136a5b928e92/raw/a83cdb719e0d80093ce69100009477692a06e4be/characters.json)
+
 ## sln
 
 ```powershell
@@ -161,4 +164,8 @@ dotnet add tests/Application.UnitTests package Microsoft.Extensions.Logging
 ```powershell
 dotnet user-secrets set "Characters" "" --project src/WebApi
 dotnet user-secrets set "Characters" "" --project tests/Application.FunctionalTests
+```
+
+```powershell
+dotnet test --logger "console;verbosity=detailed"
 ```

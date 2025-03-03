@@ -1,7 +1,5 @@
 namespace Arturfie.Application.Battle.Services;
 
-using System.Threading;
-using System.Threading.Tasks;
 using Arturfie.Application.Battle.Exceptions;
 using Arturfie.Application.Battle.Interfaces;
 using Arturfie.Application.Battle.Models;
@@ -32,13 +30,13 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
 
         if (character.Type == rival.Type)
         {
-            throw new WrongOpponentException(character, rival);
+            throw new WrongOpponentException();
         }
 
-        if (character.Weakness == rival.Name)
-        {
-            return rival.Name;
-        }
+        // if (character.Weakness == rival.Name)
+        // {
+        //     return rival.Name;
+        // }
 
         if (character.Score > rival.Score)
         {
