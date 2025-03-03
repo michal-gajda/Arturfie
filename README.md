@@ -169,3 +169,11 @@ dotnet user-secrets set "Characters" "" --project tests/Application.FunctionalTe
 ```powershell
 dotnet test --logger "console;verbosity=detailed"
 ```
+
+```powershell
+dotnet new mstest --output tests/WebApi.IntegrationTests --name Arturfie.WebApi.IntegrationTests
+dotnet sln add tests/WebApi.IntegrationTests
+dotnet add tests/WebApi.IntegrationTests reference src/WebApi
+dotnet add tests/WebApi.IntegrationTests package FluentAssertions
+dotnet add tests/WebApi.IntegrationTests package Microsoft.AspNetCore.Mvc.Testing
+```

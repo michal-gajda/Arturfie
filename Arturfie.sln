@@ -27,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application.UnitTests", "Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arturfie.Application.UnitTests", "tests\Application.UnitTests\Arturfie.Application.UnitTests.csproj", "{317849FB-144E-416B-9588-83A942F39D9D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi.IntegrationTests", "WebApi.IntegrationTests", "{AE5EABD7-A5D8-BB49-1385-159BE206703C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arturfie.WebApi.IntegrationTests", "tests\WebApi.IntegrationTests\Arturfie.WebApi.IntegrationTests.csproj", "{CBAC26FD-CF08-498B-A378-AD769D44E2BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +101,18 @@ Global
 		{317849FB-144E-416B-9588-83A942F39D9D}.Release|x64.Build.0 = Release|Any CPU
 		{317849FB-144E-416B-9588-83A942F39D9D}.Release|x86.ActiveCfg = Release|Any CPU
 		{317849FB-144E-416B-9588-83A942F39D9D}.Release|x86.Build.0 = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|x64.Build.0 = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Debug|x86.Build.0 = Debug|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|x64.ActiveCfg = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|x64.Build.0 = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|x86.ActiveCfg = Release|Any CPU
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,5 +128,7 @@ Global
 		{9FA37898-C5CE-4F34-ADE3-2BCEFD881643} = {CFB35AA8-FDB8-705D-2EAE-6618A336344F}
 		{B7A67187-1738-495E-17CB-A690C572E7D4} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{317849FB-144E-416B-9588-83A942F39D9D} = {B7A67187-1738-495E-17CB-A690C572E7D4}
+		{AE5EABD7-A5D8-BB49-1385-159BE206703C} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{CBAC26FD-CF08-498B-A378-AD769D44E2BC} = {AE5EABD7-A5D8-BB49-1385-159BE206703C}
 	EndGlobalSection
 EndGlobal

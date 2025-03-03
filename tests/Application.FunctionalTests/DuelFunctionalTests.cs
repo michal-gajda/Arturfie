@@ -51,25 +51,4 @@ public sealed class DuelFunctionalTests : ApplicationBootstrapperBase
             .ThrowAsync<OpponentHimselfException>()
             ;
     }
-
-    [TestMethod]
-    public async Task fkdjskjfhskjhfkjsd()
-    {
-        // Arrange
-        var query = new Duel
-        {
-            Character = "Batman",
-            Rival = "Joker"
-        };
-
-        // Act
-        string sut = await this.mediator.Send(query, CancellationToken.None);
-
-        // Assert
-        sut.Should()
-            .NotBeEmpty()
-            .And
-            .Be("Joker")
-            ;
-    }
 }

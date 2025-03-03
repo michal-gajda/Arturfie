@@ -3,7 +3,7 @@ namespace Arturfie.WebApi;
 using Arturfie.Application;
 using Arturfie.Infrastructure;
 
-internal static class Program
+public sealed class Program
 {
     const int EXIT_SUCCESS = 0;
 
