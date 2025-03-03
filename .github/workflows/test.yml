@@ -26,10 +26,6 @@ jobs:
         with:
           dotnet-version: "9.0.x"
 
-      - name: Print Repository Variables
-        run: |
-          echo "CHARACTERS: $CHARACTERS"
-
       - name: Restore dependencies
         run: dotnet restore
 

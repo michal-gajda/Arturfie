@@ -12,6 +12,7 @@ public abstract class ApplicationBootstrapperBase
     {
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
+            .AddEnvironmentVariables()
             .AddUserSecrets<ApplicationBootstrapperBase>()
             .Build();
 
