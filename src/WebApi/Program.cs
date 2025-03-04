@@ -3,6 +3,7 @@ namespace Arturfie.WebApi;
 using Arturfie.Application;
 using Arturfie.Infrastructure;
 using Asp.Versioning;
+using Microsoft.OpenApi.Models;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -54,22 +55,35 @@ internal sealed class Program
         builder.Services.AddSingleton(TracerProvider.Default.GetTracer(SERVICE_NAME, SERVICE_VERSION));
 
         builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
-        builder.Services.AddOpenApi();
+
+        builder.Services.AddSwaggerGen(options =>
+        {
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
+                Title = "Arturfie API",
+                Version = "1.0",
+                Description = "Arturfie API"
+            });
+
+            options.SwaggerDoc("v2", new OpenApiInfo
+            {
+                Title = "Arturfie API",
+                Version = "2.0",
+                Description = "Arturfie API"
+            });
+        });
 
         builder.Services.AddApiVersioning(options =>
         {
             options.DefaultApiVersion = new ApiVersion(1, 0);
             options.AssumeDefaultVersionWhenUnspecified = true;
             options.ReportApiVersions = true;
-            options.ApiVersionReader = ApiVersionReader.Combine(
-                new UrlSegmentApiVersionReader(),
-                new HeaderApiVersionReader("X-Api-Version")
-            );
+            options.ApiVersionReader = new HeaderApiVersionReader("X-Api-Version");
         })
         .AddMvc()
         .AddApiExplorer(options =>
         {
-            options.GroupNameFormat = "'v'VVV"; // Formatowanie wersji w Swaggerze
+            options.GroupNameFormat = "'v'VVV";
             options.SubstituteApiVersionInUrl = true;
         });
 
@@ -80,6 +94,13 @@ internal sealed class Program
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Arturfie API v1");
+                options.SwaggerEndpoint("/swagger/v2/swagger.json", "Arturfie API v2");
+            });
         }
 
         app.UseAuthorization();

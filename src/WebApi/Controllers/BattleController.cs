@@ -6,7 +6,7 @@ using Asp.Versioning;
 [ApiController, ApiVersion("1.0"), ApiVersion("2.0"), Route("[controller]")]
 public sealed class BattleController(IMediator mediator) : ControllerBase
 {
-    [HttpGet(Name = "GetBattleResult")]
+    [HttpGet(Name = "GetBattleResult"), ProducesResponseType<string>(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<string> GetAsync([FromQuery] string character, [FromQuery] string rival, CancellationToken cancellationToken = default)
     {
         var query = new Duel
@@ -19,7 +19,7 @@ public sealed class BattleController(IMediator mediator) : ControllerBase
         return result;
     }
 
-    [HttpGet(Name = "GetBattleResult"), MapToApiVersion("2.0")]
+    [HttpGet(Name = "GetBattleResult"), MapToApiVersion("2.0"), ProducesResponseType<string>(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<string> GetAsyncV2([FromQuery] string hero, [FromQuery] string villain, CancellationToken cancellationToken = default)
     {
         var query = new Duel
