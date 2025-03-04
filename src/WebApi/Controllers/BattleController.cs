@@ -22,7 +22,7 @@ public sealed class BattleController(IMediator mediator) : ControllerBase
     [HttpGet(Name = "GetBattleResult"), MapToApiVersion("2.0"), ProducesResponseType<string>(StatusCodes.Status200OK), ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<string> GetAsyncV2([FromQuery] string hero, [FromQuery] string villain, CancellationToken cancellationToken = default)
     {
-        var query = new Duel
+        var query = new DuelV2
         {
             Character = hero,
             Rival = villain,

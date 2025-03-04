@@ -4,9 +4,9 @@ using Arturfie.Application.Battle.Interfaces;
 using Arturfie.Application.Battle.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
-internal sealed class DuelHandler(ILogger<DuelHandler> logger, [FromKeyedServices("v1")] IBattleService service) : IRequestHandler<Duel, string>
+internal sealed class DuelV2Handler(ILogger<DuelHandler> logger, [FromKeyedServices("v2")] IBattleService service) : IRequestHandler<DuelV2, string>
 {
-    public async Task<string> Handle(Duel request, CancellationToken cancellationToken)
+    public async Task<string> Handle(DuelV2 request, CancellationToken cancellationToken)
     {
         logger.LogInformation($"Fight between {request.Character} and {request.Rival}");
 

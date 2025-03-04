@@ -4,7 +4,7 @@ using Arturfie.Application.Battle.Exceptions;
 using Arturfie.Application.Battle.Interfaces;
 using Microsoft.Extensions.Logging;
 
-internal sealed partial class BattleService(ILogger<BattleService> logger, ICharacterProvider provider) : IBattleService
+internal sealed partial class BattleServiceV2(ILogger<BattleService> logger, ICharacterProvider provider) : IBattleService
 {
     public async Task<string> FightAsync(string characterName, string rivalName, CancellationToken cancellationToken = default)
     {
@@ -32,7 +32,14 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
             throw new WrongOpponentException();
         }
 
-        if (character.Score > rival.Score)
+        var score = character.Score;
+
+        if (character.Weakness == rival.Name)
+        {
+            score -= 1;
+        }
+
+        if (score > rival.Score)
         {
             this.LogCharacter(character.Name);
 
