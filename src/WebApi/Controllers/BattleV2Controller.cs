@@ -11,8 +11,8 @@ public sealed class BattleV2Controller(IMediator mediator) : ControllerBase
     {
         var query = new DuelV2
         {
-            Character = hero,
-            Rival = villain,
+            Hero = hero,
+            Villain = villain,
         };
         var result = await mediator.Send(query, cancellationToken);
 
