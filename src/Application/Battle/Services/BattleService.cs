@@ -2,7 +2,6 @@ namespace Arturfie.Application.Battle.Services;
 
 using Arturfie.Application.Battle.Exceptions;
 using Arturfie.Application.Battle.Interfaces;
-using Arturfie.Application.Battle.Models;
 using Microsoft.Extensions.Logging;
 
 internal sealed partial class BattleService(ILogger<BattleService> logger, ICharacterProvider provider) : IBattleService
@@ -33,7 +32,14 @@ internal sealed partial class BattleService(ILogger<BattleService> logger, IChar
             throw new WrongOpponentException();
         }
 
-        if (character.Score > rival.Score)
+        var score = character.Score;
+
+        if (character.Weakness == rival.Name)
+        {
+            score -= 1;
+        }
+
+        if (score > rival.Score)
         {
             this.LogCharacter(character.Name);
 

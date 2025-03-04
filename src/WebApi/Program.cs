@@ -2,6 +2,7 @@ namespace Arturfie.WebApi;
 
 using Arturfie.Application;
 using Arturfie.Infrastructure;
+using Asp.Versioning;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -54,6 +55,23 @@ internal sealed class Program
 
         builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.WriteIndented = true);
         builder.Services.AddOpenApi();
+
+        builder.Services.AddApiVersioning(options =>
+        {
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.ReportApiVersions = true;
+            options.ApiVersionReader = ApiVersionReader.Combine(
+                new UrlSegmentApiVersionReader(),
+                new HeaderApiVersionReader("X-Api-Version")
+            );
+        })
+        .AddMvc()
+        .AddApiExplorer(options =>
+        {
+            options.GroupNameFormat = "'v'VVV"; // Formatowanie wersji w Swaggerze
+            options.SubstituteApiVersionInUrl = true;
+        });
 
         var app = builder.Build();
 

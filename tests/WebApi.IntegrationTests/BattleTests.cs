@@ -15,7 +15,7 @@ public sealed class BattleTests
     }
 
     [TestMethod]
-    public async Task Get_Endpoint_ReturnsSuccessAndCorrectContentType()
+    public async Task Duel_ThorVsThanos_Should_Return_Thanos()
     {
         // Arrange
 
@@ -37,7 +37,55 @@ public sealed class BattleTests
     }
 
     [TestMethod]
-    public async Task Get_Endpoint_ReturnsBadRequestCorrectContentType()
+    public async Task Duel_BatmanVsJoker_Should_Return_Joker()
+    {
+        // Arrange
+        var request = new HttpRequestMessage(HttpMethod.Get, "/battle?hero=Batman&villain=Joker");
+        request.Headers.Add("X-Api-Version", "2.0");
+
+        // Act
+        var response = await client!.SendAsync(request);
+
+        // Assert
+        response.StatusCode.Should()
+            .Be(HttpStatusCode.OK)
+            ;
+        response.Content.Headers.ContentType?.ToString().Should()
+            .Be("text/plain; charset=utf-8")
+            ;
+
+        var content = await response.Content.ReadAsStringAsync();
+        content.Should()
+            .Be("Joker")
+            ;
+    }
+
+    [TestMethod]
+    public async Task Duel_SupermanVsLexLuthor_Should_Return_Superman()
+    {
+        // Arrange
+        var request = new HttpRequestMessage(HttpMethod.Get, "/battle?hero=Superman&villain=Lex%20Luthor");
+        request.Headers.Add("X-Api-Version", "2.0");
+
+        // Act
+        var response = await client!.SendAsync(request);
+
+        // Assert
+        response.StatusCode.Should()
+            .Be(HttpStatusCode.OK)
+            ;
+        response.Content.Headers.ContentType?.ToString().Should()
+            .Be("text/plain; charset=utf-8")
+            ;
+
+        var content = await response.Content.ReadAsStringAsync();
+        content.Should()
+            .Be("Superman")
+            ;
+    }
+
+    [TestMethod]
+    public async Task Duel_Between_The_Same_Type_Should_Returns_BadRequest()
     {
         // Arrange
 
