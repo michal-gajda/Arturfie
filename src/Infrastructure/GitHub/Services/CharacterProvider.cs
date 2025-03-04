@@ -49,5 +49,4 @@ internal sealed partial class CharacterProvider(ILogger<CharacterProvider> logge
 
     [LoggerMessage(LogLevel.Information, Message = "Retrieved {Items} items")]
     private partial void LogRetrieved(int Items);
-
 }

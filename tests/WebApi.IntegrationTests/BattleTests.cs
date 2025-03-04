@@ -1,7 +1,6 @@
 ﻿namespace Arturfie.WebApi.IntegrationTests;
 
 using System.Net;
-using Microsoft.AspNetCore.Mvc.Testing;
 
 [TestClass]
 public sealed class BattleTests
@@ -30,6 +29,11 @@ public sealed class BattleTests
         response.Content.Headers.ContentType?.ToString().Should()
             .Be("text/plain; charset=utf-8")
             ;
+
+        var content = await response.Content.ReadAsStringAsync();
+        content.Should()
+            .Be("Thanos")
+            ;
     }
 
     [TestMethod]
@@ -46,6 +50,11 @@ public sealed class BattleTests
             ;
         response.Content.Headers.ContentType?.ToString().Should()
             .Be("application/problem+json")
+            ;
+
+        var content = await response.Content.ReadAsStringAsync();
+        content.Should()
+            .Contain("characters of the same type should not fight")
             ;
     }
 }

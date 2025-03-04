@@ -9,13 +9,13 @@ internal static class DependencyInjection
 {
     public static IServiceCollection AddGitHub(this IServiceCollection services, IConfiguration configuration)
     {
-        var characters = configuration.GetValue<Uri>("Characters")!;
+        var characters = configuration.GetValue<Uri>(GitHubOptions.SectionName)!;
         var options = new GitHubOptions
         {
             Characters = characters,
         };
 
-        services.AddSingleton<GitHubOptions>(options);
+        services.AddSingleton(options);
         services.AddSingleton<ICharacterProvider, CharacterProvider>();
         services.AddHttpClient();
 

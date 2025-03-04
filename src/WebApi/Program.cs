@@ -7,7 +7,7 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
-public sealed class Program
+internal sealed class Program
 {
     const int EXIT_SUCCESS = 0;
     const string SERVICE_NAME = "Arturfie";

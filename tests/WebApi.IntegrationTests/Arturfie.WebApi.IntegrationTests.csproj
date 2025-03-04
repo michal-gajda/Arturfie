@@ -10,6 +10,7 @@
   <ItemGroup>
     <Using Include="FluentAssertions" />
     <Using Include="FluentAssertions.Extensions" />
+    <Using Include="Microsoft.AspNetCore.Mvc.Testing" />
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
