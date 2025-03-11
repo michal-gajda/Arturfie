@@ -10,9 +10,9 @@ public sealed class BattleExceptionsHandler(IProblemDetailsService problemDetail
     {
         var statusCode = exception switch
         {
-            CharacterNotFoundException characterNotFoundException => HttpStatusCode.NotFound,
-            OpponentHimselfException opponentHimselfException => HttpStatusCode.BadRequest,
-            WrongOpponentException wrongOpponentException => HttpStatusCode.BadRequest,
+            CharacterNotFoundException => HttpStatusCode.NotFound,
+            OpponentHimselfException => HttpStatusCode.BadRequest,
+            WrongOpponentException => HttpStatusCode.BadRequest,
             _ => HttpStatusCode.InternalServerError,
         };
 

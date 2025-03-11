@@ -42,7 +42,7 @@ public sealed class BattleServiceTests
 
     private readonly NullLogger<BattleService> logger = new();
     private readonly ICharacterProvider provider = Substitute.For<ICharacterProvider>();
-    private readonly IBattleService service;
+    private readonly BattleService service;
 
     public BattleServiceTests()
     {

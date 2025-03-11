@@ -8,7 +8,7 @@ internal sealed class DuelHandler(ILogger<DuelHandler> logger, [FromKeyedService
 {
     public async Task<string> Handle(Duel request, CancellationToken cancellationToken)
     {
-        logger.LogInformation($"Fight between {request.Character} and {request.Rival}");
+        logger.LogInformation("Fight between {Character} and {Rival}", request.Character, request.Rival);
 
         return await service.FightAsync(request.Character, request.Rival, cancellationToken);
     }

@@ -15,6 +15,13 @@ internal sealed class Program
     const string SERVICE_NAME = "Arturfie";
     const string SERVICE_VERSION = "1.0.0";
 
+    const string TITLE = "Arturfie API";
+    const string DESCRIPTION = "Arturfie API";
+
+    private Program()
+    {
+    }
+
     public static async Task<int> Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
@@ -60,16 +67,16 @@ internal sealed class Program
         {
             options.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Arturfie API",
+                Title = TITLE,
                 Version = "1.0",
-                Description = "Arturfie API"
+                Description = DESCRIPTION
             });
 
             options.SwaggerDoc("v2", new OpenApiInfo
             {
-                Title = "Arturfie API",
+                Title = TITLE,
                 Version = "2.0",
-                Description = "Arturfie API"
+                Description = DESCRIPTION
             });
         });
 
