@@ -1,5 +1,6 @@
 namespace Arturfie.WebApi;
 
+using System.Diagnostics.CodeAnalysis;
 using Arturfie.Application;
 using Arturfie.Infrastructure;
 using Asp.Versioning;
@@ -9,6 +10,7 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
+[ExcludeFromCodeCoverage]
 internal sealed class Program
 {
     const int EXIT_SUCCESS = 0;

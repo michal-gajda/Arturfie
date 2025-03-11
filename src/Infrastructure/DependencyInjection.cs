@@ -1,10 +1,12 @@
 ﻿namespace Arturfie.Infrastructure;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Arturfie.Infrastructure.GitHub;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+[ExcludeFromCodeCoverage]
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)

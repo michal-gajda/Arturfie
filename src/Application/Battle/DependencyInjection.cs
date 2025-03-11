@@ -1,9 +1,11 @@
 namespace Arturfie.Application.Battle;
 
+using System.Diagnostics.CodeAnalysis;
 using Arturfie.Application.Battle.Interfaces;
 using Arturfie.Application.Battle.Services;
 using Microsoft.Extensions.DependencyInjection;
 
+[ExcludeFromCodeCoverage]
 internal static class DependencyInjection
 {
     public static IServiceCollection AddBattle(this IServiceCollection services)

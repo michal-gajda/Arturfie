@@ -1,9 +1,11 @@
 namespace Arturfie.WebApi;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using Arturfie.Application.Battle.Exceptions;
 using Microsoft.AspNetCore.Http;
 
+[ExcludeFromCodeCoverage]
 public sealed class BattleExceptionsHandler(IProblemDetailsService problemDetailsService) : Microsoft.AspNetCore.Diagnostics.IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
